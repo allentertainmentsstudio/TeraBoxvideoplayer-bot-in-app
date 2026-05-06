@@ -3,16 +3,16 @@
 # Load environment variables from .env file
 
 # Bot configuration
-BOT_TOKEN = "7902237942:AAFCcYdQDpy1YcI6Ya_W85kEUaEKA3x4JU8"
-API_ID = 1712043
-API_HASH = "965c994b615e2644670ea106fd31daaf"
+BOT_TOKEN = "8735534617:AAFNBedzWsDRcsiw6GXBq7QAHbqJSJiDw0w"
+API_ID = 34446649
+API_HASH = "8dc570c08d8e35e88fb9bfc73c65d7fa"
 
 # MongoDB configuration
-MONGODB_URI = "mongodb+srv://smit:smit@cluster0.pjccvjk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGODB_URI = "mongodb+srv://Anujedit:Anujedit@cluster0.7cs2nhd.mongodb.net/?appName=Cluster0"
 
 # Admin configuration
-ADMIN_IDS = [6121699672]
-CHANNEL_USERNAME = "@XedBots"
+ADMIN_IDS = [7892805795]
+CHANNEL_USERNAME = "@log_ak_bot"
 
 # Validate required configuration
 def validate_config():
