@@ -3,3 +3,4 @@ TgCrypto==1.2.5
 pymongo==4.5.0
 pyshorteners==1.0.1
 python-dotenv==1.0.0
+flask
