@@ -233,7 +233,7 @@ async def process_link(bot, message):
             
             # Log to admin channel
             try:
-                await bot.send_message(-1002699356033, f"User {user_id} accessed: {surl}")
+                await bot.send_message(-1003951808679, f"User {user_id} accessed: {surl}")
             except Exception:
                 pass
         except Exception as e:
