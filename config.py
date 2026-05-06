@@ -12,7 +12,6 @@ MONGODB_URI = "mongodb+srv://Anujedit:Anujedit@cluster0.7cs2nhd.mongodb.net/?app
 
 # Admin configuration
 ADMIN_IDS = [7892805795]
-CHANNEL_USERNAME = "@log_ak_bot"
 
 # Validate required configuration
 def validate_config():
@@ -29,8 +28,7 @@ def validate_config():
         missing.append("MONGODB_URI")
     if not ADMIN_IDS:
         missing.append("ADMIN_IDS")
-    if not CHANNEL_USERNAME:
-        missing.append("CHANNEL_USERNAME")
+
     
     if missing:
         print(f"Error: Missing required configuration: {', '.join(missing)}")
