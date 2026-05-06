@@ -1,3 +1,5 @@
+from flask import Flask
+from threading import Thread
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup as ikm, InlineKeyboardButton as ikb, WebAppInfo
 import random
@@ -5,6 +7,16 @@ import pymongo
 import pyshorteners
 from pyrogram.enums import ChatMemberStatus
 import config
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    app.run(host="0.0.0.0", port=8080)
 
 # Validate configuration before starting
 if not config.validate_config():
@@ -247,5 +259,10 @@ async def process_link(bot, message):
 # Run the bot
 if __name__ == "__main__":
     print("Starting TeraBox Link Processor Bot...")
+
+    # Start Flask in separate thread
+    Thread(target=run_flask).start()
+
+    # Start Telegram bot
     bot.run()
 
