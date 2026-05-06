@@ -263,11 +263,7 @@ async def process_link(bot, message):
 
 # Run the bot
 if __name__ == "__main__":
-    print("Starting TeraBox Link Processor Bot...")
+    print("Starting Bot + Flask...")
 
-    # Start Flask in separate thread
-    Thread(target=run_flask).start()
-
-    # Start Telegram bot
+    Thread(target=run_flask, daemon=True).start()
     bot.run()
-
