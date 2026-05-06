@@ -51,25 +51,6 @@ channel_username = config.CHANNEL_USERNAME
 under_maintainance = False
 broadcast_on = False
 
-# Check if user has joined the required channel
-def check_joined():
-    async def func(flt, bot, message):
-        join_msg = f"**To use this bot, Please join our channel.\nJoin From The Link Below 👇**"
-        user_id = message.from_user.id
-        chat_id = message.chat.id
-        try:
-            member_info = await bot.get_chat_member(channel_username, user_id)
-            if member_info.status in (ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER):
-                return True
-            else:
-                await bot.send_message(chat_id, join_msg, reply_markup=ikm([[ikb("✅ Join Channel", url=f"https://t.me/{channel_username.replace('@', '')}")]])) 
-                return False
-        except Exception:
-            await bot.send_message(chat_id, join_msg, reply_markup=ikm([[ikb("✅ Join Channel", url=f"https://t.me/{channel_username.replace('@', '')}")]])) 
-            return False
-
-    return filters.create(func)
-
 # Connect to MongoDB
 client = pymongo.MongoClient(config.MONGODB_URI)
 db = client['terabox2']
