@@ -8,15 +8,20 @@ import pyshorteners
 from pyrogram.enums import ChatMemberStatus
 import config
 
-
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Bot is running!"
+    return "✅ Bot is running!"
+
+@app.route('/health')
+def health():
+    return {"status": "running"}
+
+PORT = int(os.environ.get("PORT", 8080))
 
 def run_flask():
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=PORT)
 
 # Validate configuration before starting
 if not config.validate_config():
